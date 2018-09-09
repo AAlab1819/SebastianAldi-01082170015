@@ -1,1 +1,22 @@
-ofc im not done lmao, to be updated later
+## 230A: Dragons
+[**Link**](http://codeforces.com/contest/230/problem/A) | [**Solution**](http://codeforces.com/contest/230/submission/42668458)\
+**Sorting method: Cocktail Shaker Sort**\
+The problem is as follows: given n dragons and each of them has their own strength and bonus strength given if defeated by Kirito, can Kirito kill all n dragons? To solve this problem, we shall take a greedy approach: sort the dragons based on their strength, then kill all dragons starting from the lowest strength in order to keep gaining bonus strength. If Kirito suddenly does not have sufficient strength to kill the next stronger dragon, even with the bonus strength, then the answer would be `NO`. Else, the answer is `YES`.  
+  
+**How does one store the strength and the bonus of each dragon?**\
+If we are using an object oriented language, we can treat each dragon as an object that has two attributes, which is their strength and the bonus strength gain if defeated.\
+If we are using `python`, we can use the first solution (Dragons as objects), or use a list that contains another list, which contains the dragon strength and the bonus. It should look something like: `[[strength, bonus], [strength, bonus],...]`. That way, we can access the attributes by calling Dragons[index][0] for their strength and Dragons[index][1] for the bonus granted if Kirito defeats said dragon.\
+If we are using `C++`, we can use a vector that contains a pair of integers (`vector<pair<int,int>> Dragons`). This way, we can access the attributes by calling Dragons[index].first for their strength and Dragons[index].second for the bonus granted if Kirito defeats said dragon. (Or use a struct, which could probably lead to cleaner code.)
+
+## 291A: Spyke Talks
+[**Link**](http://codeforces.com/contest/291/problem/A) | [**Solution**](http://codeforces.com/contest/291/submission/42706762)\
+**Sorting method: Shell Sort**\
+The problem is as follows: given a bunch of integers (which correspond to the ID numbers), how many pairs of chatting secretaries are there, or output `-1` if there are more than two secretaries using a single ID number (because conferences are not allowed in this problem). Do note that `0` corresponds to said secretary not using Spyke, so don't count those. To solve this problem, first sort the array, then check if the next secretary is using the same ID. Don't forget to check the next-next secretary (for instance, check Secretary[0], Secretary[1], and Secretary[2]) in order to check if the situation is impossible. If so, then the answer would automatically be `-1`, assuming the ID is not 0. Due to the nature of the complete search, off by one errors could happen, as well as forgetting to check the last secretary and the second last secretary, so implement some workarounds to avoid getting the wrong answer.
+## 768A: Oath of the Night's Watch
+[**Link**](http://codeforces.com/contest/768/problem/A) | [**Solution**](http://codeforces.com/contest/768/submission/42706840)\
+**Sorting method: Comb Sort**\
+The problem here is simple: output how many stewards will Jon support. Jon will support a steward if there exists a steward that has less strength and more strength. To solve this problem, sort the list of the stewards based on their strength, then find how many stewards have the same value as the first element (the lowest value), and how many stewardws have the same value as the last element (the highest value). Store the amount of weakest and strongest stewards into a variable (In this case I named in unsupportable, to count how many stewards will Jon NOT support). Count how many stewards that Jon won't support by performing a complete search, then the answer would be `How many stewards - how many unsupportable stewards`. To avoid `Time Limit Exceeded`, iterate the list twice, first normally, and the second time reversed. Implement break statements if `Stewards[i]` no longer matches the criteria. However, this way could result in a negative number, as seen [here](http://codeforces.com/contest/768/submission/42666771)... so be careful of that 😂
+
+### Student comments
+For 291A, the problem is solvable by using a map or dictionary without sorting... but a certain someone insisted on sorting it 😁\
+For 768A, we can do two complete searches, first to find the lowest and highest value, the second to find which stewards will be unsupported. Again, a certain someone insisted on sorting it 😁
