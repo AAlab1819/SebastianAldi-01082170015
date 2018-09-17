@@ -4,7 +4,7 @@ The problem here is to find the minimum possible radius in order to cover all of
 **Why divide by 2?**\
 We need to divide it by 2 because both lanterns will light up, so there is no need to take the distance as a whole. For example, if a and b has a distance of 4, we choose the radius 2 because:\
 A2)(3B\
-A will light point 1 and 2, while B will light the points 3 and 4. So there is no need to use 4 as a radius.
+A will light point 1 and 2, while B will light the points 3 and 4. So there is no need to use 4 as a radius.\
 **Watch out!**\
 If there are no lanterns at point 0 or point `streetLength` (rightmost point), then make sure to account for the first lantern position - 0 as well as rightmost point - last lantern position. Why? Take for example a street length of 3, and a lantern at point 3:\
 01(2A --> point 0 and 1 is not covered by the light, because there is no lantern at point 0 to cover the remaining points.  
