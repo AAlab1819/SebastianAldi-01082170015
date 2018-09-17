@@ -18,7 +18,7 @@ Best Case: &Omega;(*n*) = best case for `Timsort`, then perform a linear search 
 [**Link**](http://codeforces.com/contest/148/problem/A) | [**Solution**](http://codeforces.com/contest/148/submission/42973341)\
 Simple problem, simple explanation: If there are *d* dragons, indexed from 1 to *d*, how many dragons are injured? Or mathematically, how many numbers from 1 to *d* is a multiple of *k* or *l* or *m* or *n*?\
 There are two approaches to this: [mathematical](https://math.stackexchange.com/q/688272) or brute force, considering *d* has a maximum value of 100000. Since brute force is possible, let's do it! 🤣\
-Perform a linear for loop from 1 to *d*, check if each number results in a whole number if divided by *k* or *l* or *m* or *n*, by using modulus by checking if the result of the modulus is 0.\
+Perform a linear for loop from 1 to *d*, check if each number results in a whole number if divided by *k* or *l* or *m* or *n*, by using modulus by checking if the result of the modulus is 0.
   
 Complexity:<br>
 Since we are always going to perform a complete serach, the complexity is *O*(*n*) no matter what.\
@@ -29,7 +29,7 @@ Best Case: &Omega;(*n*)<br>
 [**Link**](http://codeforces.com/contest/469/problem/A) | [**Solution**](http://codeforces.com/contest/469/submission/42975930)\
 If there are *n* levels in a game, and if little X and little Y can solve certain levels only, can they beat the game with teamwork?\
 To put it in other words, from numbers 1 to *n*, are all the numbers present if the first array (little x) and the second array (little y) is merged?\
-To solve this problem, I used a *set* container, which only allows unique elements (so if the set contains 1, 2, 3, and I attempt to insert 2 again, nothing happens), insert both lists into the set, then check if the number of elements in the set matches the number of levels. If the number of elements is less than the number of levels, that means that some levels are unsolvable by both of them.\
+To solve this problem, I used a *set* container, which only allows unique elements (so if the set contains 1, 2, 3, and I attempt to insert 2 again, nothing happens), insert both lists into the set, then check if the number of elements in the set matches the number of levels. If the number of elements is less than the number of levels, that means that some levels are unsolvable by both of them.
   
 Complexity:<br>
 We can make the solution run faster with break statements, but the complexity remains the same because it disregards the coefficient of *n*. Insertion of both lists take `little_x[0] + little_y[0]` operations, maybe even worse if the insertion is linear every time, but the complexity remains linear.\
