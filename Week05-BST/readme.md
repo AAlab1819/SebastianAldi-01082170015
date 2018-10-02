@@ -50,4 +50,4 @@ This is not a spruce because `1` does not have 3 leaf children. `3` and `4` are 
 This is a spruce because `1` have 3 leaf children (3, 4, 5) and 2 have 3 leaf children as well (6, 7, 8).
 My way to solve this is to simulate the tree using `map <int, vector <int>>`, where the key represents the index and `vector<int>` represents how many child does the key have. Go to each index from 1 to `n`, then check if the index has children or not. If the index have children, count for each child, how many child does not have additional children. If the leaves have a total of less than 3, then the tree is not a spruce.
 Complexity:<br>
-Worst Case: *O*(*n*)<br>
+Worst Case: *O*(*n log n*)<br>
