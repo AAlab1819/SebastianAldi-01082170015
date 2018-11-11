@@ -38,4 +38,4 @@ Running the code will yield the contents of the source array as follows:
 ```
 This shows that the shortest path to 5 is from 3, the shortest path to 3 is 4, the shortest path to 4 is 1. The reverse checking is done by `destination = source[destination]`. Keep track of the indexes, and print it.
   
-Worst Case: O(V x log(E)), because Dijkstra. This problem is pretty much Dijkstra, except that we have to print the path instead of the minimum cost.
+Worst Case: O(E x log(V)), because Dijkstra. This problem is pretty much Dijkstra, except that we have to print the path instead of the minimum cost.
